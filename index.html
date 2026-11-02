@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assessment 1: Layout Tasks</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        background: #fafafa;
+        color: #18181b;
+        padding: 48px 24px;
+      }
+      main { max-width: 640px; margin: 0 auto; }
+      h1 { font-size: 1.75rem; margin-bottom: 8px; }
+      p.intro { color: #52525b; margin-bottom: 32px; }
+      ul { list-style: none; display: grid; gap: 16px; }
+      a {
+        display: block;
+        padding: 20px;
+        background: #fff;
+        border: 1px solid #e4e4e7;
+        border-radius: 12px;
+        color: inherit;
+        text-decoration: none;
+      }
+      a:hover { border-color: #a1a1aa; }
+      a:focus-visible { outline: 2px solid #14b8a6; outline-offset: 3px; }
+      a strong { display: block; font-size: 1.1rem; margin-bottom: 4px; }
+      a span { color: #52525b; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Assessment 1: Layout Tasks</h1>
+      <p class="intro">Two React layouts built from the same components.</p>
+      <ul>
+        <li>
+          <a href="task-1-layout-in-react/index.html">
+            <strong>Task 1: Layout in React</strong>
+            <span>Fixed two-column grid: content area and sidebar.</span>
+          </a>
+        </li>
+        <li>
+          <a href="task-2-responsive-layouts/index.html">
+            <strong>Task 2: Responsive Layouts</strong>
+            <span>Mobile-first. Stacked on phones, cards side by side from 640px, sidebar column from 1024px.</span>
+          </a>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>

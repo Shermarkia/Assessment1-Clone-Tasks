@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Without this, phones render at ~980px and the media queries never fire -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2: Responsive Layouts</title>
+    <script>
+      // Opened by double-click: JSX can't run without the dev server, so show the built page instead.
+      // The pathname check stops the built copy (index.html) from redirecting to itself.
+      if (location.protocol === 'file:' && location.pathname.endsWith('app.html')) {
+        location.replace('index.html');
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

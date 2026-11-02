@@ -1,0 +1,150 @@
+/* Task 2 Layout CSS - Mobile First Approach */
+:root {
+  --primary-color: #0f766e;
+  --secondary-color: #14b8a6;
+  --bg-color: #fafafa;
+  --card-bg: #ffffff;
+  --text-main: #18181b;
+  --border-color: #e4e4e7;
+  --radius: 12px;
+  --transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Mobile Default: Stacked view */
+.main-layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  flex: 1;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 24px;
+  text-align: center;
+}
+
+nav {
+  background-color: #18181b;
+  padding: 12px;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  gap: 12px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+aside {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+/* Responsive grid changes size dynamically */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+footer {
+  background-color: #18181b;
+  color: #a1a1aa;
+  text-align: center;
+  padding: 16px;
+  margin-top: auto;
+}
+
+/* Tablet Layout Optimization */
+@media (min-width: 640px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+  }
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+/* Desktop Layout Optimization */
+@media (min-width: 1024px) {
+  .main-layout-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 24px;
+    padding: 24px;
+  }
+}
+/* Sidebar heading is an h2 for correct outline; keep it visually smaller than the main h2 */
+aside h2 {
+  font-size: 1.15rem;
+}
+
+nav a:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* The global margin reset leaves headings touching their text */
+.card h3,
+aside h2 {
+  margin-bottom: 8px;
+}
+
+/* Grid items stretch by default; keep the sidebar as tall as its content */
+aside {
+  align-self: start;
+}
